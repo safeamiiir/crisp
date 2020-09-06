@@ -47,13 +47,19 @@
           'chat:closed',
           () => {
             console.log('closed!');
+            interface.handleClose();
           },
         ]);
       })();
+
+      function handleOpen() {
+        $crisp.push(['do', 'chat:open']);
+      }
     </script>
   </head>
 
   <body>
     <h1>CRISP CHAT</h1>
+    <button onclick="handleOpen()">open</button>
   </body>
 </html>
