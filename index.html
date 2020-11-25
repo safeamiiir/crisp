@@ -39,26 +39,27 @@
       let crisp_id;
       function handleOpen(token) {
         document.getElementById(
-          'token'
+          "token"
         ).innerHTML = `${token} in function called!`;
         // $crisp.push(['do', 'chat:open']);
         crisp_id = token;
-        return 'ret';
+        return "ret";
       }
-      window.CRISP_WEBSITE_ID = crisp_id;
+      // window.CRISP_WEBSITE_ID = crisp_id;
+      window.CRISP_WEBSITE_ID = "0747e0db-00f3-4e3c-b5b1-36c1a2a532b6";
       window.$crisp = [];
       (function () {
         d = document;
-        s = d.createElement('script');
-        s.src = 'https://client.crisp.chat/l.js';
+        s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
         s.async = 1;
-        d.getElementsByTagName('head')[0].appendChild(s);
+        d.getElementsByTagName("head")[0].appendChild(s);
         // $crisp.push(['do', 'chat:open']);
         $crisp.push([
-          'on',
-          'chat:closed',
+          "on",
+          "chat:closed",
           () => {
-            console.log('closed!');
+            console.log("closed!");
             interface.handleClose();
           },
         ]);
